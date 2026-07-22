@@ -48,7 +48,9 @@ function doPost(e) {
         data.parentNumber  || "",
         data.studentName   || "",
         data.studentNumber || "",
-        data.city          || ""
+        data.city          || "",
+        data.attendedby    || ""
+        
       ]);
     }
 
