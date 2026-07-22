@@ -66,8 +66,8 @@ No code, no redeploy. The form picks it up automatically.
 ## Data captured
 Each submission adds a row to the **Registrations** tab:
 
-| Timestamp | Parent Name | Parent Number | Student Name | Student Number | Attended By |
-|-----------|-------------|---------------|--------------|----------------|-------------|
+| Timestamp | Parent Name | Parent Number | Student Name | Student Number | City | Attended By |
+|-----------|-------------|---------------|--------------|----------------|------|-------------|
 
 > **Note:** If you ever change `Code.gs`, you must redeploy:
 > **Deploy → Manage deployments → ✏ Edit → Version: New version → Deploy.**
