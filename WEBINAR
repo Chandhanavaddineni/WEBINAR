@@ -187,6 +187,7 @@
         studentName: form.studentName.value.trim(),
         studentNumber: form.studentNumber.value.trim(),
         city: form.city.value.trim(),
+        attendedBy: form.attendedBy.value,
       };
     }
 
@@ -223,7 +224,7 @@
       // FAST PATH: link already loaded -> save in background, redirect now.
       if (meetLink) {
         saveInBackground(data).catch(() => {});
-        localStorage.setItem(STORAGE_KEY, JSON.stringify({ parentName: data.parentName, parentNumber: data.parentNumber, studentName: data.studentName, city: data.city, timestamp: new Date().toISOString() }));
+        localStorage.setItem(STORAGE_KEY, JSON.stringify({ parentName: data.parentName, parentNumber: data.parentNumber, studentName: data.studentName, city: data.city, attendedBy: data.attendedBy, timestamp: new Date().toISOString() }));
         window.location.href = meetLink;
         return;
       }
@@ -234,7 +235,7 @@
         const res = await saveInBackground(data);
         const result = await res.json();
         if (result.meetLink) {
-          localStorage.setItem(STORAGE_KEY, JSON.stringify({ parentName: data.parentName, parentNumber: data.parentNumber, studentName: data.studentName, city: data.city, timestamp: new Date().toISOString() }));
+          localStorage.setItem(STORAGE_KEY, JSON.stringify({ parentName: data.parentName, parentNumber: data.parentNumber, studentName: data.studentName, city: data.city, attendedBy: data.attendedBy, timestamp: new Date().toISOString() }));
           window.location.href = result.meetLink;
         } else {
           throw new Error(result.message || "No webinar link configured.");
