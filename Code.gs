@@ -24,7 +24,7 @@ function doPost(e) {
   try {
     var data = JSON.parse(e.postData.contents);
 
-    var ss = SpreadsheetApp.getActiveSpreadsheet();
+    var ss = SpreadsheetApp.openById("1Rw94kskh-6xatMs-qjTg9BSE9Vq65zt5-Ug9_91kDxg");
 
     // --- 1. Save the registration ---
     var sheet = ss.getSheetByName(REG_SHEET);
@@ -77,7 +77,7 @@ function getMeetLink(ss) {
 
 /** Optional: lets you test by opening the web app URL in a browser. */
 function doGet() {
-  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var ss = SpreadsheetApp.openById("1Rw94kskh-6xatMs-qjTg9BSE9Vq65zt5-Ug9_91kDxg");
   return json({ status: "ok", meetLink: getMeetLink(ss) });
 }
 
